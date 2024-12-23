@@ -1,4 +1,5 @@
-import HeaderBox from "@/components/HeaderBox";import TotalBalanceBox from "@/components/TotalBalanceBox";
+import HeaderBox from "@/components/HeaderBox";
+import TotalBalanceBox from "@/components/TotalBalanceBox";
 import RightSidebar from "@/components/RightSidebar";
 
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
@@ -17,8 +18,21 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
             subtext="Access and manage your account and transactions efficiently."
           />
 
+          <TotalBalanceBox 
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={143}
+
+          />
         </header>
-    </div>
+
+        RECET TRANSACTIONS
+      </div>
+      <RightSidebar 
+        user={loggedIn}
+        transactions={[]}
+        banks={[{currentBalance:126.50},{currentBalance:800.50}]}
+      />
     </section>
   )
 }
