@@ -1,9 +1,10 @@
-import HeaderBox from "@/components/HeaderBox";
-
+import HeaderBox from "@/components/HeaderBox";import TotalBalanceBox from "@/components/TotalBalanceBox";
+import RightSidebar from "@/components/RightSidebar";
 
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
-    const loggedIn = {firstName:'Elva'};
-
+    const loggedIn = {firstName:'Elva', lastName:'W', email:"eval.slsl@gmail.com"}
+    const accounts = {totalBanks: 1, totalCurrentBalance:143, data: []}
+    const accountsData = accounts.data
 
   return (
     <section className="home">
