@@ -23,8 +23,8 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
-// import PlaidLink from './PlaidLink';
-console.log(".................................")
+import PlaidLink from './PlaidLink';
+
 const formSchema = z.object({
     username: z.string().min(2,{
         message: "Username must be at least 2 characters."
@@ -53,7 +53,6 @@ const AuthForm = ({ type }: { type: string }) => {
 
       try {
         // Sign up with Appwrite & create plaid token
-        
         if(type === 'sign-up') {
           const userData = {
             firstName: data.firstName!,
@@ -70,7 +69,6 @@ const AuthForm = ({ type }: { type: string }) => {
 
           const newUser = await signUp(userData);
         //   const newUser = await signUp(data);
-
 
           setUser(newUser);
         }
@@ -121,9 +119,9 @@ const AuthForm = ({ type }: { type: string }) => {
       </header>
        {user ? (
         <div className="flex flex-col gap-4">
-          {/* <PlaidLink user={user} variant="primary" /> */}
+          <PlaidLink user={user} variant="primary" />
         </div>
-      ): (
+        ) : ( 
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

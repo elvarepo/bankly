@@ -7,7 +7,7 @@ import { countTransactionCategories } from '@/lib/utils'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
-  console.log('>>>>>> ', user)
+  ('>>>>>> ', user)
   return (
     <aside className="right-sidebar"  >
       <section className="flex flex-col pb-8">
